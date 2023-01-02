@@ -46,3 +46,31 @@ TODO: How to use Human feedback in trading environment
 It  is a set of reliable implementations of reinforcement learning algorithms in PyTorch. [Docs](https://stable-baselines3.readthedocs.io/en/master/index.html) can be found here.
 
 ## [ABIDES](https://github.com/jpmorganchase/abides-jpmc-public)
+
+
+## [AI-Economist](https://github.com/salesforce/ai-economist)
+Gym like environment for economic simulations
+### Activation key problem [Analysing RSA]
+RSA key generation algorithm involves, getting two large prime numbers $p$ and $q$ such that $N = p*q$ is the public key. Now, take $e$ as a known parameter. The private key $d$ becomes:
+$$ d * e = 1 \space (mod[p-1]*[q-1]) $$
+
+Now the encryption function:
+$$ c = M^e (mod N) $$
+
+and decryption function:
+$$ M = c^d (mod N) $$
+
+There are several elements to explain but the most important is to understand why this function, which is used for decrypting $(c)$ and obtaining $[M]$, works:
+
+$$M ≡ c^{[d]} (mod N)$$ 
+
+This is Step 2; that is, the decryption function. I have just inverted the notation by putting $[M]$ on the left.
+
+The reason it works is hidden in the key generation equation:
+$$ [d] * e ≡ 1 \space (mod [p-1]*[q-1]) $$
+$[d]$ is Alice's private key. For Euler's theorem, the function will probably be verified because the numbers $[p]$ and $[q]$ are very big and $[M]$ is probably a co-prime of $(N)$. If this equation is verified, then we can rewrite the encryption stage as follows:
+$$ (M^e)^d (mod N) $$
+For the properties of the powers and Euler's theorem, we have the following:
+$$ M^{(e*d)} (mod N)$$
+$$de ≡ 1 (mod (p-1)*(q-1))$$
+That is the same as writing $M^1 = M (mod N).$ So, by inserting $[d]$ inside the decryption stage, Alice can obtain $[M]$.
