@@ -74,3 +74,23 @@ For the properties of the powers and Euler's theorem, we have the following:
 $$ M^{(e*d)} (mod N)$$
 $$de ≡ 1 (mod (p-1)*(q-1))$$
 That is the same as writing $M^1 = M (mod N).$ So, by inserting $[d]$ inside the decryption stage, Alice can obtain $[M]$.
+
+### AI economist theory
+
+### [RICE-N model for climate modeling](https://github.com/mila-iqia/climate-cooperation-competition)
+
+
+
+## [Warpdrive package for GPU parallel processing](https://github.com/salesforce/warp-drive) 
+For this to work we need [PyCUDA](https://github.com/inducer/pycuda) for that CUDA toolkit needs to install where cuda.h header file is necessary
+
+### Multiple CUDA and cuDnn version install in ubuntu
+[follow the instruction here](https://towardsdatascience.com/installing-multiple-cuda-cudnn-versions-in-ubuntu-fcb6aa5194e2)
+
+
+## Utilities
+
+- [ ] Remove pip packages from a conda environment before removing the environment
+```
+conda list | awk '/pypi/ {print $1}' | xargs pip uninstall -y
+```
